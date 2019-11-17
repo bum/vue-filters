@@ -21,7 +21,7 @@ const GlobalVue = typeof window !== 'undefined' ? window.Vue
 if (GlobalVue) GlobalVue.use({ install })
 
 // auto generated plugin for each of components
-const filters = {}
+let filters = {}
 Object.keys(transforms).forEach(name => {
 	const install = (Vue) => {
 		if (install.installed) {return} else install.installed = true
