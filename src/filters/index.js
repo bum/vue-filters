@@ -1,7 +1,7 @@
 // Import all vue component to comps
-import * as util from './util'
+import * as string from './string'
 
-const filters = { ...util }
+const filters = { ...string }
 
 // Declare install function executed by Vue.use()
 export function install(Vue) {

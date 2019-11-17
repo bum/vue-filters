@@ -1,0 +1,6 @@
+export * from './capitalize'
+export * from './lowercase'
+export * from './placeholder'
+export * from './trim'
+export * from './truncate'
+export * from './uppercase'

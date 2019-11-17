@@ -1,10 +1,6 @@
-/**
- * Capitalize a string.
- */
-export const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1)
-
-/**
- * Camelize a hyphen-delimited string.
- */
-const camelizeRE = /-(\w)/g
-export const camelize = (str) => str.replace(camelizeRE, (_, c) => c ? c.toUpperCase() : '')
+export const isDef = (v) => v !== undefined && v !== null
+export const isUndef = (v) => v === undefined || v === null
+export const isBlank = (v) => isUndef(v) || v.toString() === ''
+export const isNotBlank = (v) => isDef(v) && v.toString() !== ''
+export const isNumber = (v) => typeof v === 'number'
+export const isString = (v) => typeof v === 'string'
