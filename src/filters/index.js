@@ -3,16 +3,16 @@ import * as string from './string'
 import * as array from './array'
 import { isArray, isString } from './util'
 
-const filters = { ...string, ...array }
+const transforms = { ...string, ...array }
 
 // Declare install function executed by Vue.use()
 export function install(Vue, options = {}) {
 	if (install.installed) {return} else {install.installed = true}
-	const names = !options.filters ? Object.keys(filters)
+	const names = !options.filters ? Object.keys(transforms)
 		: isArray(options.filters) ? options.filters
 			: isString(options.filters) ? options.filters.trim().split(' ')
-				: Object.keys(filters)
-	names.forEach(name => filters[name] && Vue.filter(name, filters[name]))
+				: Object.keys(transforms)
+	names.forEach(name => transforms[name] && Vue.filter(name, transforms[name]))
 }
 
 // Auto-install when vue is found (eg. in browser via <script> tag)
@@ -21,19 +21,20 @@ const GlobalVue = typeof window !== 'undefined' ? window.Vue
 if (GlobalVue) GlobalVue.use({ install })
 
 // auto generated plugin for each of components
-// const plugins = {}
-// Object.keys(comps).forEach(name => {
-// 	const install = (Vue) => {
-// 		if (install.installed) {return} else install.installed = true
-// 		Vue.component(name, comps[name])
-// 	}
-// 	install.installed = false
-//
-// 	plugins[name + 'Plugin'] = install
-// })
+const filters = {}
+Object.keys(transforms).forEach(name => {
+	const install = (Vue) => {
+		if (install.installed) {return} else install.installed = true
+		Vue.filter(name, transforms[name])
+	}
+	install.installed = false
+
+	filters[name + 'Filter'] = install
+})
 
 // To allow use as module(npm / webpack / etc.) export component
 export default {
 	install,
+	...transforms,
 	...filters,
 }
