@@ -32,18 +32,23 @@ Object.keys(transforms).forEach(name => {
 	filters[name + 'Filter'] = install
 })
 
+// export const filter = function (func) {
+// 	return { install: (Vue) => Vue.filter(func.name, func) }
+// }
+// manual generated install (eg. filter(uppercase) => install for uppercase filter
+const filter = (func) => (Vue) => Vue.filter(func.name, func)
+
 // To allow use as module(npm / webpack / etc.) export component
 export default {
 	install,
+	...transforms,
 	...filters,
+	filter,
 }
 
-export * from './string'
-export * from './array'
-export const filter = function (func) {
-	return { install: (Vue) => Vue.filter(func.name, func) }
-}
-
+// export * from './string'
+// export * from './array'
+//
 // export const uppercaseFilter = makeFilter(string.capitalize)
 // export const CurrencyFilter = makeFilter(string.currency)
 // export const LowercaseFilter = makeFilter(string.lowercase)
