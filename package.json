@@ -10,6 +10,7 @@
   },
   "main": "lib/dist/vue-filters.common.js",
   "dependencies": {
+    "core-js": "^3.4.1",
     "vue": "^2.6.10"
   },
   "devDependencies": {
@@ -27,8 +28,7 @@
       "node": true
     },
     "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended"
+      "plugin:vue/essential"
     ],
     "rules": { },
     "parserOptions": {
