@@ -27,9 +27,9 @@ Object.keys(transforms).forEach(name => {
 		if (install.installed) {return} else install.installed = true
 		Vue.filter(name, transforms[name])
 	}
-	install.installed = false
+	// install.installed = false
 
-	filters[name + 'Filter'] = install
+	filters[name + 'Filter'] = { install }
 })
 
 // To allow use as module(npm / webpack / etc.) export component
