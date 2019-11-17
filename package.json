@@ -1,6 +1,6 @@
 {
   "name": "vue-filters",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -8,6 +8,7 @@
     "build:filters": "vue-cli-service build --target lib --name vue-filters --dest lib/dist src/filters/index.js",
     "lint": "vue-cli-service lint"
   },
+  "main": "lib/dist/vue-filters.common.js",
   "dependencies": {
     "vue": "^2.6.10"
   },

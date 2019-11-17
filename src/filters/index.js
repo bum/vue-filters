@@ -1,7 +1,7 @@
 // Import all vue component to comps
-import { capitalize } from './util'
+import * as util from './util'
 
-const filters = { capitalize }
+const filters = { ...util }
 
 // Declare install function executed by Vue.use()
 export function install(Vue) {
