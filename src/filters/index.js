@@ -1,7 +1,7 @@
 // Import all vue component to comps
 import * as string from './string'
 import * as array from './array'
-import { isArray, isString } from './util'
+import { isArray, isString, makeFilter } from './util'
 
 const transforms = { ...string, ...array }
 
@@ -35,6 +35,21 @@ Object.keys(transforms).forEach(name => {
 // To allow use as module(npm / webpack / etc.) export component
 export default {
 	install,
-	...transforms,
-	...filters,
 }
+
+export * from './string'
+export * from './array'
+
+export const uppercaseFilter = makeFilter(string.capitalize)
+export const CurrencyFilter = makeFilter(string.currency)
+export const LowercaseFilter = makeFilter(string.lowercase)
+export const PlaceholderFilter = makeFilter(string.placeholder)
+export const PluralizeFilter = makeFilter(string.pluralize)
+export const TrimFilter = makeFilter(string.trim)
+export const TruncateFilter = makeFilter(string.truncate)
+
+export const UppercaseFilter = makeFilter(string.uppercase)
+export const FilterByilter = makeFilter(array.filterBy)
+export const FindByFilter = makeFilter(array.findBy)
+export const LimitByFilter = makeFilter(array.limitBy)
+export const OrderByFilter = makeFilter(array.orderBy())
