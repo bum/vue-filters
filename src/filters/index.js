@@ -1,7 +1,8 @@
 // Import all vue component to comps
 import * as string from './string'
+import * as array from './array'
 
-const filters = { ...string }
+const filters = { ...string, ...array }
 
 // Declare install function executed by Vue.use()
 export function install(Vue) {

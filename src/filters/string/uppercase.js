@@ -6,5 +6,5 @@ import { isUndef } from '../util'
  * ('abc') => 'ABC'
  */
 
-export const lowercase = (val) => isUndef(val) ? ''
+export const uppercase = (val) => isUndef(val) ? ''
 	: val.toString().toUpperCase()
