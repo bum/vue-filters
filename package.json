@@ -1,6 +1,6 @@
 {
   "name": "vue-filter2",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "A collection of Vue.js filters",
   "private": false,
   "scripts": {
@@ -28,14 +28,14 @@
     "extends": [
       "plugin:vue/essential"
     ],
-    "rules": { },
+    "rules": {},
     "parserOptions": {
       "parser": "babel-eslint"
     }
   },
   "postcss": {
     "plugins": {
-      "autoprefixer": { }
+      "autoprefixer": {}
     }
   },
   "browserslist": [
@@ -47,5 +47,6 @@
     "vue",
     "filter",
     "vue-filters"
-  ]
+  ],
+  "dependencies": {}
 }

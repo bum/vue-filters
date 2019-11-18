@@ -6,7 +6,7 @@ import { isArray, isString } from './util'
 const transforms = { ...string, ...array }
 
 // Declare install function executed by Vue.use()
-export function install(Vue, options = {}) {
+function install(Vue, options = {}) {
 	if (install.installed) {return} else {install.installed = true}
 	const names = !options.filters ? Object.keys(transforms)
 		: isArray(options.filters) ? options.filters
@@ -21,30 +21,33 @@ const GlobalVue = typeof window !== 'undefined' ? window.Vue
 if (GlobalVue) GlobalVue.use({ install })
 
 // auto generated plugin for each of components
-const filters = {}
-Object.keys(transforms).forEach(name => {
-	const install = (Vue) => {
-		if (install.installed) {return} else install.installed = true
-		Vue.filter(name, transforms[name])
-	}
-	install.installed = false
+// const genFilters = {}
+// Object.keys(transforms).forEach(name => {
+// 	const install = (Vue) => {
+// 		if (install.installed) {return} else install.installed = true
+// 		Vue.filter(name, transforms[name])
+// 	}
+// 	install.installed = false
+//
+// 	genFilters[name + 'Filter'] = install
+// })
 
-	filters[name + 'Filter'] = install
-})
-
-// export const filter = function (func) {
+const filter = (...funcs) => (Vue) => funcs.forEach(func => Vue.filter(func.name, func))
+// manual generated install (eg. filter(uppercase) => install for uppercase filter
+// const filter = (func) => (Vue) => Vue.filter(func.name, func)
+// const filter = function (func) {
 // 	return { install: (Vue) => Vue.filter(func.name, func) }
 // }
-// manual generated install (eg. filter(uppercase) => install for uppercase filter
-const filter = (func) => (Vue) => Vue.filter(func.name, func)
 
 // To allow use as module(npm / webpack / etc.) export component
 export default {
 	install,
 	...transforms,
-	...filters,
+	// ...genFilters,
 	filter,
+	// filters,
 }
+
 
 // export * from './string'
 // export * from './array'

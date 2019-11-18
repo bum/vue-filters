@@ -15,7 +15,6 @@ import VueFilter2 from 'vue-filter2'
 Vue.use(VueFilter2)
 ```
 
-
 * Select filters required, seperated by 'space'
 ```javascript
 import Vue from 'vue'
@@ -24,22 +23,29 @@ import VueFilter2 from 'vue-filter2'
 Vue.use(VueFilter2, { filters: "lowercase uppercase" })
 ```
 
-
-* Use a pre-defined Filter
-```javascript
-import Vue from 'vue'
-import { uppercaseFilter } from 'vue-filter2'
-
-Vue.use(uppercaseFilter)
-```
-
-
-* Make your owned filters, with any transform function
+* Make your custom filters, with any transform function
 ```javascript
 import Vue from 'vue'
 import { filter, uppercase } from 'vue-filter2'
 
 Vue.use(filter(uppercase))
+```
+
+* Combine custome filter with `lodash` functions
+
+```sh
+yarn add lodash
+```
+
+```javascript
+import Vue from 'vue'
+import { filter } from 'vue-filter2'
+import { toLower, toUpper } from 'lodash/string'
+Vue.use(filter(toLower, toUpper))
+```
+
+```html
+<div>{{ 'youR Name'|toUpper }}</div>
 ```
 
 
