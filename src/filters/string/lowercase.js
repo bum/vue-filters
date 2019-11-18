@@ -1,4 +1,4 @@
-import { isUndef } from '../util'
+import { isNotEmpty } from '../util'
 
 /**
  * Converts a string to lowercase
@@ -6,5 +6,6 @@ import { isUndef } from '../util'
  * ('AbC') => 'abc'
  */
 
-export const lowercase = (val) => isUndef(val) ? ''
-	: val.toString().toLowerCase()
+export const lowercase = (val) => isNotEmpty(val)
+	? val.toString().toLowerCase()
+	: ''

@@ -1,26 +1,17 @@
 # vue-filters
 
-init
+In [Vue 1 Filters](https://cli.vuejs.org/config/), there's a list of bultin filters those removed from Vue2.
+If we want to reuse those filters, just add `vue-filters` into dependencies.
+
+```
+yarn add vue-filters
+```
 
 ## Project setup
 ```
 yarn install
 ```
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).

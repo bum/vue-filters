@@ -13,9 +13,8 @@ import { toArray } from '../util'
  *  e.g. ['single', 'double', 'triple', 'multiple']
  */
 
-export function pluralize(value) {
-	let args = toArray(arguments, 1)
-	return args.length > 1
-		? (args[value % 10 - 1] || args[args.length - 1])
-		: (args[0] + (value === 1 ? '' : 's'))
-}
+export const pluralize = (val, ...args) => !args || args.length === 0
+	? ''
+	: args.length === 1
+		? args[0] + (val === 1 ? '' : 's')
+		: args[val % 10 - 1] || args[args.length - 1]

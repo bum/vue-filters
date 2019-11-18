@@ -1,10 +1,10 @@
-import { isUndef } from '../util'
+import { isNotEmpty, isUndef } from '../util'
 
 /**
  * Converts a string to UPPERCASE
  *
  * ('abc') => 'ABC'
  */
-
-export const uppercase = (val) => isUndef(val) ? ''
-	: val.toString().toUpperCase()
+export const uppercase = (val) => isNotEmpty(val)
+	? val.toString().toUpperCase()
+	: ''

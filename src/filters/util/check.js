@@ -1,7 +1,15 @@
 export const isDef = (v) => v !== undefined && v !== null
 export const isUndef = (v) => v === undefined || v === null
-export const isBlank = (v) => isUndef(v) || v.toString() === ''
-export const isNotBlank = (v) => isDef(v) && v.toString() !== ''
+
+
+// not(null || undefined || NaN || emptyString("") || 0 || false)
+export const isTruthy = (v) => !!v
+// truthy && not zero
+export const isNotEmpty = (v) => v || v === 0
+export const isEmpty = (v) => !v && v !== 0
+
+export const isBlank = (v) => isEmpty(v) || v.trim() === ''
+export const isNotBlank = (v) => isNotEmpty(v) && v.trim() !== ''
 
 export const isNumber = (v) => typeof v === 'number'
 export const isString = (v) => typeof v === 'string'

@@ -7,4 +7,6 @@ import { isBlank } from '../util'
  * ('foo', {placeholder}) => 'foo'
  */
 
-export const placeholder = (val, placeholder) => isBlank(val) ? placeholder : val
+export const placeholder = (val, placeholder) => isBlank(val)
+	? placeholder
+	: val

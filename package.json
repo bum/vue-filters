@@ -3,14 +3,11 @@
   "version": "0.1.1",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
     "build:filters": "vue-cli-service build --target lib --name vue-filters --dest lib/dist src/filters/index.js",
     "lint": "vue-cli-service lint"
   },
   "main": "lib/dist/vue-filters.common.js",
-  "dependencies": {
-    "core-js": "^3.4.1",
+  "peerDependencies": {
     "vue": "^2.6.10"
   },
   "devDependencies": {
