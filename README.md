@@ -44,12 +44,3 @@ import { filter, uppercase } from 'vue-filter2'
 
 Vue.use(filter(uppercase))
 ```
-
-## Project setup
-```
-yarn install
-```
-
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
