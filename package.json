@@ -1,12 +1,13 @@
 {
-  "name": "vue-filters",
+  "name": "vue-filter2",
   "version": "0.1.1",
-  "private": true,
+  "description": "A collection of Vue.js filters",
+  "private": false,
   "scripts": {
-    "build:filters": "vue-cli-service build --target lib --name vue-filters --dest lib/dist src/filters/index.js",
+    "build:filters": "vue-cli-service build --target lib --name vue-filter2 --dest lib/dist src/filters/index.js",
     "lint": "vue-cli-service lint"
   },
-  "main": "lib/dist/vue-filters.common.js",
+  "main": "lib/dist/vue-filter2.common.js",
   "peerDependencies": {
     "vue": "^2.6.10"
   },
@@ -40,5 +41,11 @@
   "browserslist": [
     "> 1%",
     "last 2 versions"
+  ],
+  "keywords": [
+    "vuejs",
+    "vue",
+    "filter",
+    "vue-filters"
   ]
 }
