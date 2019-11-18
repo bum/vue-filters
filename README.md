@@ -3,7 +3,7 @@
 In [Vue 1 Filters](https://cli.vuejs.org/config/), there's a list of bultin filters those removed from Vue2.
 If we want to reuse those filters, just add `vue-filter2` into dependencies.
 
-```sh
+```shell script
 yarn add vue-filter2
 ```
 
@@ -23,7 +23,7 @@ import VueFilter2 from 'vue-filter2'
 Vue.use(VueFilter2, { filters: "lowercase uppercase" })
 ```
 
-* Make your custom filters, with any transform function
+* Make your *custom filter* with any transform function
 ```javascript
 import Vue from 'vue'
 import { filter, uppercase } from 'vue-filter2'
@@ -31,9 +31,9 @@ import { filter, uppercase } from 'vue-filter2'
 Vue.use(filter(uppercase))
 ```
 
-* Combine custome filter with `lodash` functions
+* Combine *custom filter* with `lodash` functions
 
-```sh
+```shell script
 yarn add lodash
 ```
 
@@ -68,3 +68,5 @@ Vue.use(filter(toLower, toUpper))
 * findBy
 * limitBy
 * orderBy
+
+## `lodash` [functions](https://lodash.com/docs/) (use custome filter)
