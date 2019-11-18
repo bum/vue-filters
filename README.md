@@ -7,7 +7,7 @@ If we want to reuse those filters, just add `vue-filter2` into dependencies.
 yarn add vue-filter2
 ```
 
-* Use all filters from `vue-filter2`
+* Use all built-in filters from `vue-filter2`
 ```javascript
 import Vue from 'vue'
 import VueFilter2 from 'vue-filter2'
@@ -15,7 +15,7 @@ import VueFilter2 from 'vue-filter2'
 Vue.use(VueFilter2)
 ```
 
-* Select filters required, seperated by 'space'
+* Select bilt-in filters, seperated by 'space'
 ```javascript
 import Vue from 'vue'
 import VueFilter2 from 'vue-filter2'
@@ -23,7 +23,7 @@ import VueFilter2 from 'vue-filter2'
 Vue.use(VueFilter2, { filters: "lowercase uppercase" })
 ```
 
-* Make your *custom filter* with any transform function
+* Make your **custom filter** with any transform function
 ```javascript
 import Vue from 'vue'
 import { filter, uppercase } from 'vue-filter2'
@@ -31,7 +31,7 @@ import { filter, uppercase } from 'vue-filter2'
 Vue.use(filter(uppercase))
 ```
 
-* Combine *custom filter* with `lodash` functions
+* Combine **custom filter** with `lodash` functions
 
 ```shell script
 yarn add lodash
@@ -49,7 +49,7 @@ Vue.use(filter(toLower, toUpper))
 ```
 
 
-# Supported Filters
+# Built-in Filters
 
 ## String
 
@@ -69,4 +69,5 @@ Vue.use(filter(toLower, toUpper))
 * limitBy
 * orderBy
 
-## `lodash` [functions](https://lodash.com/docs/) (use custome filter)
+# `lodash` [functions](https://lodash.com/docs/) 
+(use **custom filter**)
