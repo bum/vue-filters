@@ -1,16 +1,16 @@
-# vue-filter2
+# @bum/vue-filters
 
 In [Vue 1 Filters](https://cli.vuejs.org/config/), there's a list of bultin filters those removed from Vue2.
-If we want to reuse those filters, just add `vue-filter2` into dependencies.
+If we want to reuse those filters, just add `@bum/vue-filters` into dependencies.
 
 ```shell script
-yarn add vue-filter2
+yarn add @bum/vue-filters
 ```
 
-* Use all built-in filters from `vue-filter2`
+* Use all built-in filters from `@bum/vue-filters`
 ```javascript
 import Vue from 'vue'
-import VueFilters from 'vue-filter2'
+import VueFilters from '@bum/vue-filters'
 
 Vue.use(VueFilters)
 ```
@@ -18,7 +18,7 @@ Vue.use(VueFilters)
 * Select bilt-in filters, seperated by 'space'
 ```javascript
 import Vue from 'vue'
-import VueFilters from 'vue-filter2'
+import VueFilters from '@bum/vue-filters'
 
 Vue.use(VueFilters, { filters: "lowercase uppercase" })
 ```
@@ -26,7 +26,7 @@ Vue.use(VueFilters, { filters: "lowercase uppercase" })
 * Make your **custom filter** with any transform function
 ```javascript
 import Vue from 'vue'
-import { filter, uppercase } from 'vue-filter2'
+import { filter, uppercase } from '@bum/vue-filters'
 
 Vue.use(filter(uppercase))
 ```
@@ -39,7 +39,7 @@ yarn add lodash
 
 ```javascript
 import Vue from 'vue'
-import { filter } from 'vue-filter2'
+import { filter } from '@bum/vue-filters'
 import { toLower, toUpper } from 'lodash/string'
 Vue.use(filter(toLower, toUpper))
 ```
